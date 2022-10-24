@@ -14,7 +14,7 @@ const AvailableMeals = () => {
     const fetchMeals = async () => {
       const response = await fetch('https://react-custom-hooks-94454-default-rtdb.firebaseio.com/meals.json')
 
-      if (response.ok) {
+      if (!response.ok) {
         throw new Error('Something went wrong');
       }
 
