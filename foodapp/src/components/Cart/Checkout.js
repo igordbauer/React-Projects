@@ -5,31 +5,33 @@ const isEmpty = value => value.trim() === '';
 const isFiveChars = value => value.trim() === 5;
 
 
-const Checkout = (props) => {
-
+const Checkout = ({
+  onCancel,
+  onConfirm
+}) => {
   const [formInputValidity, setFormInputValidity] = useState({
     name: true,
     street: true,
     city: true,
     postalCode: true
   });
-
+  
   const nameInputRef = useRef();
   const streetInputRef = useRef();
   const postalCodeInputRef = useRef();
   const cityInputRef = useRef();
-
+  
   const confirmHandler = (event) => {
     event.preventDefault();
     const enteredName = nameInputRef.current.value;
     const enteredStreet = streetInputRef.current.value;
     const enteredPostalCode = postalCodeInputRef.current.value;
     const enteredCity = cityInputRef.current.value;
-
+    
     const enteredNameIsValid = !isEmpty(enteredName);
     const enteredStreetIsValid = !isEmpty(enteredStreet);
     const enteredCityIsValid = !isEmpty(enteredCity);
-    const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
+    const enteredPostalCodeIsValid = !isEmpty(enteredPostalCode);
 
     setFormInputValidity({
       name: enteredNameIsValid,
@@ -44,6 +46,12 @@ const Checkout = (props) => {
     if (!formIsValid) {
       return;
     }
+    onConfirm({
+      name:enteredName,
+      street: enteredStreet,
+      postalCode:enteredPostalCode,
+      city:enteredCity
+    })
   };
 
   return (
@@ -69,7 +77,7 @@ const Checkout = (props) => {
         {!formInputValidity.city && <p>Please enter a valid City name!</p>}
       </div>
       <div className={classes.actions}>
-        <button type='button' onClick={props.onCancel}>
+        <button type='button' onClick={onCancel}>
           Cancel
         </button>
         <button className={classes.submit}>Confirm</button>

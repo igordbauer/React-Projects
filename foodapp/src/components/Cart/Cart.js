@@ -22,7 +22,17 @@ const Cart = (props) => {
   };
 
   const orderHandler = () => {
-    setIsCheckout(true)
+    setIsCheckout(true);
+  }
+
+  const submitOrderHandler = (userData) => {
+    fetch('https://react-custom-hooks-94454-default-rtdb.firebaseio.com/orders.json', {
+      method: 'POST',
+      body: JSON.stringify({
+        user: userData,
+        orderItems: cartCtx.items
+      })
+    })
   }
 
 
@@ -55,7 +65,7 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      {isCheckout && <Checkout onCancel={props.onClose} />}
+      {isCheckout && <Checkout onCancel={props.onClose} onConfirm={submitOrderHandler} />}
       {!isCheckout && modalActions}
 
     </Modal>
