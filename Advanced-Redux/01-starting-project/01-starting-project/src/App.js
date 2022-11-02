@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import { useSelector, useDispatch } from 'react-redux';
 import Notification from './components/UI/Notification';
-import { sendCartData } from './store/cartSlice'
+import { sendCartData, fetchCartData } from './store/cartActions'
 
 let isInitial = true
 
@@ -14,6 +14,11 @@ function App() {
   const notification = useSelector(state => state.ui.notification)
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCartData())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     if (isInitial) {
