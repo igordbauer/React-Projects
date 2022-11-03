@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCartData())
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -25,7 +25,9 @@ function App() {
       isInitial = false
       return
     }
-    dispatch(sendCartData(cart))
+    if (cart.changed) {
+      dispatch(sendCartData(cart))
+    }
   }, [cart, dispatch])
 
 
