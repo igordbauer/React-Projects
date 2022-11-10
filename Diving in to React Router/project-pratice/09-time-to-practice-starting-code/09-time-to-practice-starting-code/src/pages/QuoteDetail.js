@@ -8,7 +8,7 @@ const DUMMY_QUOTES = [
 ]
 
 const QuoteDetail = () => {
-
+// teste
   const params = useParams()
 
   const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId)
