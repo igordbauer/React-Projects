@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-
+import { API_KEY } from '../../App';
 import classes from './AuthForm.module.css';
 
 const AuthForm = () => {
@@ -19,35 +19,42 @@ const AuthForm = () => {
     const enteredEmail = emailInputRef.current.value
     const enteredPassword = passwordInputRef.current.value
     setIsLoading(true)
+    let url;
     if (isLogin) {
-
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`
     } else {
-      fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDG2uQUwq9Ynfizy-tKrhNk-R5mgIXGxeo', {
-        method: 'POST',
-        body: JSON.stringify({
-          email: enteredEmail,
-          password: enteredPassword,
-          returnSecureToken: true
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-
-      }).then(res => {
-        setIsLoading(false)
-        if (res.ok) {
-          console.log('ok')
-        } else {
-          return res.json().then(data => {
-            let errorMessage = 'Authentication failed!';
-            // if (data && data.error & data.error.message) {
-            //   errorMessage = data.error.message
-            // }
-            alert(errorMessage)
-          })
-        }
-      })
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`
     }
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken: true
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+
+    }).then(res => {
+      setIsLoading(false)
+      if (res.ok) {
+        return res.json()
+      } else {
+        return res.json().then(data => {
+          let errorMessage = 'Authentication failed!';
+          // if (data && data.error & data.error.message) {
+          //   errorMessage = data.error.message
+          // }
+          throw new Error(errorMessage)
+        })
+      }
+    }).then(data => {
+      console.log(data)
+    }).catch(error => {
+      alert(error.message)
+    })
+
   }
 
   return (
