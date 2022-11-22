@@ -17,14 +17,15 @@ function App() {
         <Route path='/' exact>
           <HomePage />
         </Route>
-        <Route path='/auth'>
-          <AuthPage />
-        </Route>
-        {isLoggedIn &&
-          <Route path='/profile'>
-            <UserProfile />
+        {!isLoggedIn &&
+          <Route path='/auth'>
+            <AuthPage />
           </Route>
         }
+        <Route path='/profile'>
+          {isLoggedIn && <UserProfile />}
+          {!isLoggedIn && <Redirect to='/auth' />}
+        </Route>
         <Route path='*' >
           <Redirect to='/' />
         </Route>
