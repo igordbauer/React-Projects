@@ -1,5 +1,6 @@
-import { Switch, Route } from 'react-router-dom';
-
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { useContext } from 'react';
+import AuthContext from './store/authContext';
 import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile';
 import AuthPage from './pages/AuthPage';
@@ -8,6 +9,8 @@ import HomePage from './pages/HomePage';
 export const API_KEY = 'AIzaSyDG2uQUwq9Ynfizy-tKrhNk-R5mgIXGxeo'
 
 function App() {
+
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <Layout>
       <Switch>
@@ -17,8 +20,13 @@ function App() {
         <Route path='/auth'>
           <AuthPage />
         </Route>
-        <Route path='/profile'>
-          <UserProfile />
+        {isLoggedIn &&
+          <Route path='/profile'>
+            <UserProfile />
+          </Route>
+        }
+        <Route path='*' >
+          <Redirect to='/' />
         </Route>
       </Switch>
     </Layout>
