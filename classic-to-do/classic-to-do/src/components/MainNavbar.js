@@ -1,5 +1,5 @@
 import classes from './MainNavbar.module.css'
-import Button from './Button'
+import Button from './Button';
 
 const MainNavbar = () => {
   return (

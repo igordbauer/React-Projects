@@ -1,0 +1,10 @@
+.main {
+  width: 33%;
+  max-width: 33%;
+  height: 100%;
+  margin: 2px ;
+  background-color: rgb(79, 145, 207);
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: rgb(0, 0, 0);
+}

@@ -1,12 +1,13 @@
 
-main {
+.main {
     display: flex;
     border-radius: 8px;
     justify-content: center;
     margin: 3rem auto;
     width: 90%;
-    max-width: 60rem;
-    height: 80%;
+    max-width: 80rem;
+    padding: 10px;
+    height: 51rem;
     background: rgb(255, 255, 255, 0.6);
     border-color: black;
     border: 1px solid;
