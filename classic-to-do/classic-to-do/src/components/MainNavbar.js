@@ -5,7 +5,7 @@ const MainNavbar = () => {
   return (
     <header className={classes.navbar}>
       <div>
-        <Button>{'asdasd'}</Button>
+        <Button>Create task</Button>
       </div>
     </header>
   )

@@ -1,4 +1,4 @@
-main {
+.main {
     border-radius: 10px;
     border: 1px solid;
     background-color: rgba(238, 116, 59, 0.8);
@@ -6,4 +6,8 @@ main {
     margin: 3px;
     border-color: rgb(0, 0, 0);
     box-shadow: 1px 2px;
+}
+
+.main:hover {
+    background-color: rgba(238, 116, 59, 1);
 }

@@ -1,7 +1,8 @@
 button {
     cursor: pointer;
-    background-color: white;
-    color: rgba(8, 119, 191, 1);
+    background-color: rgba(238, 116, 59, 0.8);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 1px 2px;
     padding: 8px 15px;
     border-style: none;
     border-radius: 8px;
@@ -10,5 +11,5 @@ button {
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(238, 116, 59, 1);
 }
