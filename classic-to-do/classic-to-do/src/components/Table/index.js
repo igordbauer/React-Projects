@@ -1,11 +1,10 @@
 import classes from './Table.module.css'
 import Cell from '../Cell';
-import { cells } from '../../constant/cells';
 
-const Table = () => {
+const Table = ({ tasks }) => {
   return (
     <section className={classes.main}>
-      {cells.map(({
+      {tasks.map(({
         id, title, description, data,
       }) => (
         <Cell
