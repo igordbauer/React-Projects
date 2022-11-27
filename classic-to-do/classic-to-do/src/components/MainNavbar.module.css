@@ -1,6 +1,6 @@
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 4rem;
   background: rgb(5, 139, 235);
   width: 100%;
@@ -8,3 +8,6 @@ header {
   align-items: center;
 }
 
+header button {
+  margin-left: 10px;
+}
