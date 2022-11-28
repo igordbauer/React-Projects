@@ -1,10 +1,11 @@
 import classes from './Button.module.css'
 
 const Button = ({
-  children
+  children,
+  onClick
 }) => {
   return (
-    <button className={classes.button}>
+    <button onClick={onClick} className={classes.button}>
       {children}
     </button>
   )
