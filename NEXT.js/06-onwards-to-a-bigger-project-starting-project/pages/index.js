@@ -24,9 +24,20 @@ const MEETUPS = [
 ]
 
 
-const HomePage = () => {
+const HomePage = ({ meetups }) => {
   return (
-    <MeetupList meetups={MEETUPS} />
+    <MeetupList meetups={meetups} />
   )
 }
+
+export async function getStaticProps() {
+  // this function is used to call data or whatever you want to pre render in the component file
+  // than you dont need to useEffect data and refresh the content page only in the second renderization!
+  return {
+    props: {
+      meetups: MEETUPS
+    }
+  }
+}
+
 export default HomePage;
