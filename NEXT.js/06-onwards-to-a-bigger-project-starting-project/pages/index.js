@@ -30,13 +30,25 @@ const HomePage = ({ meetups }) => {
   )
 }
 
+// export async function getServerSideProps(context) {
+//   // fetch data from api
+// // used when you need to re render the page more frquently to get newer content (refresh!)
+//   return {
+//     props: {
+//       meetups: MEETUPS
+//     }
+//   }
+// }
+
 export async function getStaticProps() {
+  // fetch data from api.
   // this function is used to call data or whatever you want to pre render in the component file
   // than you dont need to useEffect data and refresh the content page only in the second renderization!
   return {
     props: {
       meetups: MEETUPS
-    }
+    },
+    revalidate:2
   }
 }
 

@@ -8,6 +8,7 @@ const MainNavbar = () => {
 
   const navigateToTaskHandler = () => navigate('/myTasks')
   const navigateToCreateTasksHandler = () => navigate('/createTasks')
+  const navigateToMyCalendar = () => navigate('/myCalendar')
 
   return (
     <header className={classes.header}>
@@ -15,8 +16,9 @@ const MainNavbar = () => {
         <h3>Classic To Do</h3>
       </div>
       <div className={classes.button}>
-        <Button onClick={navigateToCreateTasksHandler}>Create task</Button>
         <Button onClick={navigateToTaskHandler}>My tasks</Button>
+        <Button onClick={navigateToMyCalendar}>My calendar</Button>
+        <Button onClick={navigateToCreateTasksHandler}>Create task</Button>
       </div>
     </header>
   )
