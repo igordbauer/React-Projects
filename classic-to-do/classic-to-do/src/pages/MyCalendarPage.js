@@ -1,5 +1,6 @@
 import MyCalendar from "../components/MyCalendar";
 const MyCalendarPage = () => {
-    return <MyCalendar />
+
+  return <MyCalendar />
 }
 export default MyCalendarPage;

@@ -4,14 +4,12 @@ import Layout from "./components/Layout";
 import CreateTaskPage from "./pages/CreateTaskPage";
 import TaskPage from "./pages/TaskPage";
 import MyCalendarPage from "./pages/MyCalendarPage";
-import { generateCalendar } from "./store/calendarSlice";
 
 
 function App() {
   // const weekDay = new Date().getDay()
   // const day = new Date().getDate()
   // const month = new Date().getMonth()
-  const year = new Date().getFullYear()
   // const months = Object.keys(monthsEnum)
   // const calendar = months.map(month => {
   //   const days = [...Array(monthsEnum[month].days).keys()].map(day => {
@@ -27,7 +25,6 @@ function App() {
   //     days: days
   //   }
   // })
-  console.log(generateCalendar(2020))
   return (
     <>
       <MainNavbar />
