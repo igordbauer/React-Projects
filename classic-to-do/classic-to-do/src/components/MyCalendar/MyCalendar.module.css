@@ -16,3 +16,6 @@
     font-size: 30px;
     padding: 3rem 0 3rem 0;
 }
+.daysGrade {
+    display: flex;
+}
