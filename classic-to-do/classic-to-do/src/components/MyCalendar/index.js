@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useMemo, useState, useCallback } from "react";
 import { weekEnum, monthsEnum, weekIndexOfEnum } from "../../utils/enums";
+import { useMediaQuery } from "react-responsive";
 import classes from './MyCalendar.module.css'
 import WeekDay from "./WeekDay";
 import Button from "../Button";
@@ -11,11 +12,16 @@ const nullDay = { day: -1 }
 
 const MyCalendar = () => {
   console.log('render')
+
+  const isMobile = useMediaQuery({
+    query: '(max-width: 768px)'
+  })
   const [month, setMonth] = useState(new Date().getMonth())
   const calendar = useSelector(state => state.calendarReducer)
   const monthSelected = useMemo(() => Object.keys(monthsEnum)[month], [month])
   const choosenMonth = calendar.filter(e => e.name === monthSelected)[0].days
   const firstDayofMonth = choosenMonth.filter(e => e.day === 1)[0].weekDay
+  console.log(isMobile)
   const choosenMonthWithNullDays = [
     ...[...Array(weekIndexOfEnum[firstDayofMonth])]
       .map((e, i) => ({ day: -1, weekDay: weekEnum[i] })),
@@ -50,7 +56,7 @@ const MyCalendar = () => {
   const weekDays = useMemo(() => Object.values(weekEnum), [])
   return (
     <>
-      <section>
+      <section className={classes.main}>
         <div className={classes.yearLabel}>
           <Button onClick={previousMonthHandler}>previous</Button>
           {monthSelected}
@@ -58,7 +64,7 @@ const MyCalendar = () => {
         </div>
         <div className={classes.weekDays}>
           {weekDays.map(day => (
-            <WeekDay key={day} day={day} />
+            <WeekDay key={day} day={isMobile ?day.slice(0,3) : day} />
           ))}
         </div>
         <div className={classes.daysGrade} >

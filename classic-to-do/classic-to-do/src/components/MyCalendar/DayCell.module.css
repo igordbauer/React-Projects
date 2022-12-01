@@ -1,0 +1,18 @@
+.daycell {
+    text-align: end;
+    border-radius: 0;
+    border: 0.5px solid rgb(79, 145, 207);
+    padding-top: 6rem;
+    font-size: 18px;
+}
+.daycellnull {
+    text-align: end;
+    border-radius: 0;
+    border: 0.5px solid rgb(79, 145, 207,0.7);
+    padding-top: 6rem;
+    font-size: 18px;
+}
+
+.daycell:hover {
+    background-color: rgb(79, 145, 207,0.6);
+}

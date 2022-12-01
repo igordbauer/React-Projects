@@ -1,4 +1,6 @@
-.collumn{
+.column{
     display: flex;
     flex-direction: column;
+    min-width: 14.28%;
+    height: 1rem;
 }

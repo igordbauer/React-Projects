@@ -1,7 +1,8 @@
 .main{
+    width: 14.28%;
     color:rgba(8,119,191,1);
-    border-radius: 8px;
     border: 1px solid;
-    margin: 1rem;
-    padding: 0.5rem 2rem 0.5rem 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    align-items: center;
 }
