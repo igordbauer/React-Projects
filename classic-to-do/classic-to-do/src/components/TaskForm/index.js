@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { formActions } from '../../store/formSlice';
+import TextField from '../TextField';
 import classes from './TaskForm.module.css'
 
 const TaskForm = () => {
@@ -13,9 +14,8 @@ const TaskForm = () => {
   return (
     <section className={classes.card}>
       <div>
-        <div>
+<TextField onChange={titleHandler} value={title}/>
           <input label='asd' onChange={titleHandler} value={title} />
-        </div>
       </div>
     </section>
   )

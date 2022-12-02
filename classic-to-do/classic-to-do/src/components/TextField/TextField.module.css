@@ -1,0 +1,10 @@
+.input {
+    width: 60%;
+    height: 3rem;
+    border-radius: 8px;
+    border: 0.5px solid rgba(15, 69, 77, 1);
+}
+.input:focus {
+    border: 0.5px solid rgba(41, 185, 204, 1);
+
+}
