@@ -1,6 +1,7 @@
 .main{
     width: 14.28%;
-    color:rgba(8,119,191,1);
+    color:rgba(31, 139, 153, 1);
+    border-radius: 8px;
     border: 1px solid;
     padding-top: 1rem;
     text-align: center;

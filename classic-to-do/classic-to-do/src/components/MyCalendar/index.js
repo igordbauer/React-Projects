@@ -15,14 +15,14 @@ const MyCalendar = () => {
   const monthSelected = useMemo(() => Object.keys(monthsEnum)[month], [month])
   const choosenMonth = calendar.filter(e => e.name === monthSelected)[0].days
   const firstDayofMonth = choosenMonth.filter(e => e.day === 1)[0].weekDay
-  
+
   const choosenMonthWithNullDays = [
     ...[...Array(weekIndexOfEnum[firstDayofMonth])]
       .map((e, i) => ({ day: -1, weekDay: weekEnum[i] })),
     ...choosenMonth
   ]
 
-  const calculateDays = useCallback(() => ({
+  const calculateDays = () => ({
     sundayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[0]),
     mondayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[1]),
     tuesdayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[2]),
@@ -30,7 +30,7 @@ const MyCalendar = () => {
     thursdayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[4]),
     fridayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[5]),
     saturdayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[6]),
-  }), [])
+  })
 
   const previousMonthHandler = () => {
     setMonth(prev => {
@@ -49,7 +49,7 @@ const MyCalendar = () => {
       return prev + 1
     })
   }
-  
+
   const weekDays = useMemo(() => Object.values(weekEnum), [])
   return (
     <>
@@ -59,19 +59,21 @@ const MyCalendar = () => {
           {monthSelected}
           <Button onClick={nextMonthHandler}>next</Button>
         </div>
-        <div className={classes.weekDays}>
-          {weekDays.map(day => (
-            <WeekDay key={day} day={isMobile ? day.slice(0, 3) : day} />
-          ))}
-        </div>
-        <div className={classes.daysGrade} >
-          <DaysGrade vector={calculateDays().sundayDays(choosenMonthWithNullDays)} />
-          <DaysGrade vector={calculateDays().mondayDays(choosenMonthWithNullDays)} />
-          <DaysGrade vector={calculateDays().tuesdayDays(choosenMonthWithNullDays)} />
-          <DaysGrade vector={calculateDays().wednesdayDays(choosenMonthWithNullDays)} />
-          <DaysGrade vector={calculateDays().thursdayDays(choosenMonthWithNullDays)} />
-          <DaysGrade vector={calculateDays().fridayDays(choosenMonthWithNullDays)} />
-          <DaysGrade vector={calculateDays().saturdayDays(choosenMonthWithNullDays)} />
+        <div className={classes.gradeWrapper}>
+          <div className={classes.weekDays}>
+            {weekDays.map(day => (
+              <WeekDay key={day} day={isMobile ? day.slice(0, 3) : day} />
+            ))}
+          </div>
+          <div className={classes.daysGrade} >
+            <DaysGrade vector={calculateDays().sundayDays(choosenMonthWithNullDays)} />
+            <DaysGrade vector={calculateDays().mondayDays(choosenMonthWithNullDays)} />
+            <DaysGrade vector={calculateDays().tuesdayDays(choosenMonthWithNullDays)} />
+            <DaysGrade vector={calculateDays().wednesdayDays(choosenMonthWithNullDays)} />
+            <DaysGrade vector={calculateDays().thursdayDays(choosenMonthWithNullDays)} />
+            <DaysGrade vector={calculateDays().fridayDays(choosenMonthWithNullDays)} />
+            <DaysGrade vector={calculateDays().saturdayDays(choosenMonthWithNullDays)} />
+          </div>
         </div>
       </section>
     </>
