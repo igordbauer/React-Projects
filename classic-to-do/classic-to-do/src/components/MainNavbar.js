@@ -7,7 +7,7 @@ const MainNavbar = () => {
   const navigate = useNavigate();
 
   const navigateToTaskHandler = () => navigate('/myTasks')
-  const navigateToCreateTasksHandler = () => navigate('/createTasks')
+  const navigateToCreateTasksHandler = () => navigate('/createTask')
   const navigateToMyCalendar = () => navigate('/myCalendar')
 
   return (

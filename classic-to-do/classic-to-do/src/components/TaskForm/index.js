@@ -1,8 +1,23 @@
-
+import { useSelector, useDispatch } from 'react-redux';
+import { formActions } from '../../store/formSlice';
+import classes from './TaskForm.module.css'
 
 const TaskForm = () => {
+
+  const title = useSelector(state => state.formReducer.title)
+  const description = useSelector(state => state.formReducer.description)
+  const dispatch = useDispatch();
+  console.log(title)
+  const titleHandler = (event) => dispatch(formActions.titleHandler(event.target.value))
+
   return (
-    <div></div>
+    <section className={classes.card}>
+      <div>
+        <div>
+          <input label='asd' onChange={titleHandler} value={title} />
+        </div>
+      </div>
+    </section>
   )
 }
 export default TaskForm;
