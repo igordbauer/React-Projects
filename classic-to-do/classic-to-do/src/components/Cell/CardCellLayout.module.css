@@ -1,13 +1,14 @@
 .main {
     border-radius: 10px;
     border: 1px solid;
-    background-color: rgba(238, 116, 59, 0.8);
+    background-color: rgba(204, 227, 230, 1);
     padding: 10px;
+    color: rgba(15, 69, 77, 1);
     margin: 5px;
-    border-color: rgb(0, 0, 0);
-    box-shadow: 1px 2px;
+    border-color: rgba(41, 185, 204, 01);
+    box-shadow: 1px 1px;
 }
 
 .main:hover {
-    background-color: rgba(238, 116, 59, 1);
+    background-color: rgba(41, 185, 204, 0.5);
 }

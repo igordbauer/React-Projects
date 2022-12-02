@@ -6,28 +6,22 @@ import classes from './MyCalendar.module.css'
 import Button from "../Button";
 import WeekDay from "./WeekDay";
 import DaysGrade from "./DaysGrade";
-const nullDay = { day: -1 }
-
-
 
 const MyCalendar = () => {
-  console.log('render')
 
-  const isMobile = useMediaQuery({
-    query: '(max-width: 768px)'
-  })
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const [month, setMonth] = useState(new Date().getMonth())
   const calendar = useSelector(state => state.calendarReducer)
   const monthSelected = useMemo(() => Object.keys(monthsEnum)[month], [month])
   const choosenMonth = calendar.filter(e => e.name === monthSelected)[0].days
   const firstDayofMonth = choosenMonth.filter(e => e.day === 1)[0].weekDay
-  console.log(isMobile)
+  
   const choosenMonthWithNullDays = [
     ...[...Array(weekIndexOfEnum[firstDayofMonth])]
       .map((e, i) => ({ day: -1, weekDay: weekEnum[i] })),
     ...choosenMonth
   ]
-  console.log(choosenMonthWithNullDays)
+
   const calculateDays = useCallback(() => ({
     sundayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[0]),
     mondayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[1]),
@@ -37,6 +31,7 @@ const MyCalendar = () => {
     fridayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[5]),
     saturdayDays: (choosenMonthWithNullDays) => choosenMonthWithNullDays.filter(e => e.weekDay === weekEnum[6]),
   }), [])
+
   const previousMonthHandler = () => {
     setMonth(prev => {
       if (prev === 0) {
@@ -45,6 +40,7 @@ const MyCalendar = () => {
       return prev - 1
     })
   }
+
   const nextMonthHandler = () => {
     setMonth(prev => {
       if (prev === 11) {
@@ -53,6 +49,7 @@ const MyCalendar = () => {
       return prev + 1
     })
   }
+  
   const weekDays = useMemo(() => Object.values(weekEnum), [])
   return (
     <>
