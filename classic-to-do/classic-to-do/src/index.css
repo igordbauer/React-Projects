@@ -34,6 +34,6 @@ html {
 
 body {
   margin: 0;
-  height: 100vh;
   background: rgba(204, 227, 230, 1);
+  padding-bottom: 2rem;
 }
