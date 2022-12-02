@@ -3,8 +3,8 @@ import { useMemo, useState, useCallback } from "react";
 import { weekEnum, monthsEnum, weekIndexOfEnum } from "../../utils/enums";
 import { useMediaQuery } from "react-responsive";
 import classes from './MyCalendar.module.css'
-import WeekDay from "./WeekDay";
 import Button from "../Button";
+import WeekDay from "./WeekDay";
 import DaysGrade from "./DaysGrade";
 const nullDay = { day: -1 }
 
@@ -64,7 +64,7 @@ const MyCalendar = () => {
         </div>
         <div className={classes.weekDays}>
           {weekDays.map(day => (
-            <WeekDay key={day} day={isMobile ?day.slice(0,3) : day} />
+            <WeekDay key={day} day={isMobile ? day.slice(0, 3) : day} />
           ))}
         </div>
         <div className={classes.daysGrade} >

@@ -1,15 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+/* Color Theme Swatches in Hex */
+.to-do-classic-theme-1-hex { color: #0F454D; }
+.to-do-classic-theme-2-hex { color: #CCE3E6; }
+.to-do-classic-theme-3-hex { color: #29B9CC; }
+.to-do-classic-theme-4-hex { color: #3B4D4F; }
+.to-do-classic-theme-5-hex { color: #1F8B99; }
+
+/* Color Theme Swatches in RGBA */
+.to-do-classic-theme-1-rgba { color: rgba(15, 69, 77, 1); }
+.to-do-classic-theme-2-rgba { color: rgba(204, 227, 230, 1); } /*main background*/
+.to-do-classic-theme-2-rgba { color: rgba(204, 227, 230, 0.6); } /*main navbar*/
+.to-do-classic-theme-3-rgba { color: rgba(41, 185, 204, 1); } /*button*/
+.to-do-classic-theme-3-rgba-hovering { color: rgba(41, 185, 204, 0.5); } /*button*/
+.to-do-classic-theme-4-rgba { color: rgba(59, 77, 79, 1); } 
+.to-do-classic-theme-5-rgba { color: rgba(31, 139, 153, 1); }
+
+/* Color Theme Swatches in HSLA */
+.to-do-classic-theme-1-hsla { color: hsla(187, 67, 18, 1); }
+.to-do-classic-theme-2-hsla { color: hsla(186, 34, 85, 1); }
+.to-do-classic-theme-3-hsla { color: hsla(186, 66, 48, 1); }
+.to-do-classic-theme-4-hsla { color: hsla(186, 14, 27, 1); }
+.to-do-classic-theme-5-hsla { color: hsla(186, 66, 36, 1); }
 
 * {
   box-sizing: border-box;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 body {
   margin: 0;
   height: 100vh;
-  background:rgb(239, 245, 241,0.96);
+  background: rgba(204, 227, 230, 1);
 }

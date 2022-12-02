@@ -1,0 +1,14 @@
+.daycell {
+    display: flex;
+    text-align:end;
+    flex-direction: column;
+    justify-content: end;
+    border-radius: 0;
+    border: 0.5px solid rgb(79, 145, 207);
+    height: 8rem;
+    font-size: 18px;
+}
+
+.daycell:hover {
+    background-color: rgb(79, 145, 207,0.6);
+}
