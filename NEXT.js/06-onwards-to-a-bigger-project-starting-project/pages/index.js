@@ -33,6 +33,8 @@ const HomePage = ({ meetups }) => {
 // export async function getServerSideProps(context) {
 //   // fetch data from api
 // // used when you need to re render the page more frquently to get newer content (refresh!)
+// const req = context.req;
+// const res = context.res;
 //   return {
 //     props: {
 //       meetups: MEETUPS
@@ -48,7 +50,7 @@ export async function getStaticProps() {
     props: {
       meetups: MEETUPS
     },
-    revalidate:2
+    revalidate: 2
   }
 }
 

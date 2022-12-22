@@ -8,7 +8,7 @@ import WeekDay from "./WeekDay";
 import DaysGrade from "./DaysGrade";
 
 const MyCalendar = () => {
-
+console.log('render')
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const [month, setMonth] = useState(new Date().getMonth())
   const calendar = useSelector(state => state.calendarReducer)
@@ -51,6 +51,7 @@ const MyCalendar = () => {
   }
 
   const weekDays = useMemo(() => Object.values(weekEnum), [])
+
   return (
     <>
       <section className={classes.main}>
