@@ -1,16 +1,14 @@
-import classes from './MeetupDetail.module.css'
+import classes from "./MeetupDetail.module.css";
 
 const MeetupDetail = (props) => {
+  console.log(props);
   return (
     <section className={classes.detail}>
-      <img
-        src={props.img}
-        alt={props.title}
-      />
+      <img src={props.img} alt={props.title} />
       <h1>{props.title}</h1>
       <address>{props.address}</address>
       <p>{props.description}</p>
     </section>
   );
-}
+};
 export default MeetupDetail;
