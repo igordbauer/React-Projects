@@ -5,7 +5,11 @@ import "./Backdrop.css";
 const backdrop = (props) => {
   const cssClasses = [
     "Backdrop",
-    props.show ? "BackdropOpen" : "BackdropClosed",
+    props.show === "entering"
+      ? "BackdropOpen"
+      : props.show === "exiting"
+      ? "BackdropClosed"
+      : null,
   ];
 
   return <div className={cssClasses.join(" ")}></div>;
