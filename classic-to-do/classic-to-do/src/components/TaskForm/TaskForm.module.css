@@ -1,6 +1,14 @@
-.card {
-    width: 100%;
-    background-color: white;
-    border-radius: 8px;
-    padding: 5rem;
+.formLabel {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.formLabel label {
+  font-size: 1.5rem;
+}
+.main {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }

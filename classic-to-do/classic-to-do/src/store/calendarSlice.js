@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { generateCalendar } from "../utils";
 
-const calendar = generateCalendar(2022)
+const calendar = generateCalendar(new Date().getFullYear());
 
 export const calendarSlice = createSlice({
-  name: 'calendar',
+  name: "calendar",
   initialState: calendar,
-  reducers: {
-
-  }
-})
-export const calendarActions = calendarSlice.actions
+  reducers: {},
+});
+export const calendarActions = calendarSlice.actions;

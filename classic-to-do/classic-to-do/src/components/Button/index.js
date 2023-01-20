@@ -1,13 +1,10 @@
-import classes from './Button.module.css'
+import classes from "./Button.module.css";
 
-const Button = ({
-  children,
-  onClick
-}) => {
+const Button = ({ children, onClick, ...rest }) => {
   return (
-    <button onClick={onClick} className={classes.button}>
+    <button {...rest} onClick={onClick} className={classes.button}>
       {children}
     </button>
-  )
-}
-export default Button
+  );
+};
+export default Button;

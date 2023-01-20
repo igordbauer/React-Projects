@@ -1,12 +1,9 @@
-import classes from './Table.module.css'
-import Cell from '../Cell';
-
+import Cell from "../Cell";
+import Card from "../Card";
 const Table = ({ tasks }) => {
   return (
-    <section className={classes.main}>
-      {tasks.map(({
-        id, title, description, data,
-      }) => (
+    <Card>
+      {tasks.map(({ id, title, description, data }) => (
         <Cell
           key={id}
           id={id}
@@ -15,7 +12,7 @@ const Table = ({ tasks }) => {
           data={data}
         />
       ))}
-    </section>
+    </Card>
   );
-}
+};
 export default Table;
