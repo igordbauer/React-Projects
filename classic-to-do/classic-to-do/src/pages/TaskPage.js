@@ -6,8 +6,16 @@ const TaskPage = () => {
   const finished = useSelector((state) => state.taskReducer.finished);
   return (
     <>
-      <Table tasks={inProgress} />
-      <Table tasks={finished} />
+      <Table
+        tasks={inProgress}
+        label={"Let's get it done partner!!"}
+        emoji="&#128076;"
+      />
+      <Table
+        tasks={finished}
+        label={"That's fantastic, you nailed it!!"}
+        emoji="&#128526;"
+      />
     </>
   );
 };
