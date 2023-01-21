@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
 import Table from "../components/Table";
+import useChoosenDay from "../hooks/useChoosenDay";
+import { useSelector } from "react-redux";
 
 const TaskPage = () => {
-  const inProgress = useSelector((state) => state.taskReducer.inProgress);
-  const finished = useSelector((state) => state.taskReducer.finished);
+  const { inProgress, finished } = useChoosenDay();
+  const choosenDay = useSelector((state) => state.chosenDayReducer);
+  console.log(choosenDay);
   return (
     <>
       <Table

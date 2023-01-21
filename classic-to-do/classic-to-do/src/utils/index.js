@@ -1,22 +1,30 @@
-import { monthsEnum, weekEnum } from "./enums"
+import { monthsEnum, weekEnum } from "./enums";
 
 export const generateCalendar = (year) => {
-  const months = Object.keys(monthsEnum)
-  return months.map(month => {
+  const months = Object.keys(monthsEnum);
+  return months.map((month) => {
     const days = [
-      ...Array((monthsEnum[month].name === 'February' &&
-        year % 4 === 0) ? 29 : monthsEnum[month].days).keys()
-    ].map(day => {
+      ...Array(
+        monthsEnum[month].name === "February" && year % 4 === 0
+          ? 29
+          : monthsEnum[month].days
+      ).keys(),
+    ].map((day) => {
       const weekDay = new Date(`${month} ${day + 1}, ${year}`).getDay();
 
       return {
+        month,
         day: day + 1,
-        weekDay: weekEnum[weekDay]
-      }
-    })
+        weekDay: weekEnum[weekDay],
+        taskList: {
+          inProgress: [],
+          finished: [],
+        },
+      };
+    });
     return {
       name: monthsEnum[month].name,
-      days: days
-    }
-  })
-}
+      days: days,
+    };
+  });
+};

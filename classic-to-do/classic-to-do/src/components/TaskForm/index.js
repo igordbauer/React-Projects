@@ -1,15 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
 import { formActions } from "../../store/formSlice";
+import { calendarActions } from "../../store/calendarSlice";
 import { useNavigate } from "react-router";
 import TextField from "../TextField";
 import FormCard from "../FormCard";
 import Button from "../Button";
 import classes from "./TaskForm.module.css";
+import { monthEnum } from "../../utils/enums";
 
 const TaskForm = () => {
   const navigate = useNavigate();
   const title = useSelector((state) => state.formReducer.title);
   const description = useSelector((state) => state.formReducer.description);
+  const choosenDay = useSelector((state) => state.chosenDayReducer);
   const dispatch = useDispatch();
 
   const titleHandler = (event) => {
@@ -20,10 +23,17 @@ const TaskForm = () => {
   };
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(title, description);
     dispatch(formActions.titleHandler(""));
     dispatch(formActions.descriptionHandler(""));
-    navigate("/");
+    dispatch(
+      calendarActions.taskHandler({
+        month: monthEnum[choosenDay.month],
+        day: choosenDay.day,
+        title: title,
+        description: description,
+      })
+    );
+    navigate("/MyTasks");
   };
 
   return (

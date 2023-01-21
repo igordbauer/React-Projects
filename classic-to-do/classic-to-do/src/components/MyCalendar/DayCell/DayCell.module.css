@@ -1,25 +1,26 @@
 .daycell {
-    display: flex;
-    text-align:end;
-    flex-direction: column;
-    border: 0.5px solid rgba(31, 139, 153, 1);;
-    justify-content: end;
-    border-radius: 8px;
-    height: 8rem;
-    font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  text-align: end;
+  flex-direction: column;
+  border: 0.5px solid rgba(31, 139, 153, 1);
+  justify-content: end;
+  border-radius: 8px;
+  height: 8rem;
+  font-size: 18px;
 }
 .daycellnull {
-    display: flex;
-    text-align:end;
-    flex-direction: column;
-    background-color: white;
-    border: 0.5px solid rgba(31, 139, 153, 1);;
-    justify-content: end;
-    border-radius: 8px;
-    height: 8rem;
-    font-size: 18px;
+  display: flex;
+  text-align: end;
+  flex-direction: column;
+  background-color: white;
+  border: 0.5px solid rgba(31, 139, 153, 1);
+  justify-content: end;
+  border-radius: 8px;
+  height: 8rem;
+  font-size: 18px;
 }
 
 .daycell:hover {
-    background-color: rgba(41, 185, 204, 0.5);
+  background-color: rgba(41, 185, 204, 0.5);
 }
