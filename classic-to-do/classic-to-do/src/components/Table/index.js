@@ -11,12 +11,7 @@ const Table = ({ tasks, label, emoji }) => {
       </label>
       <Card>
         {tasks.length === 0 ? (
-          <Cell
-            id={"asd"}
-            title={"nada"}
-            description={"description"}
-            data={"data"}
-          />
+          <div className={classes.empty}>"Nothing to do here!"</div>
         ) : (
           tasks.map(({ id, title, description, data }) => (
             <Cell

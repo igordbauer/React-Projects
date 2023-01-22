@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className={classes.label}>
-        {choosenDay.month + " " + choosenDay.day + " " + choosenDay.weekDay}
+        {choosenDay.month + ", " + choosenDay.day}
       </div>
       <main className={classes.main}>{children}</main>
     </>
