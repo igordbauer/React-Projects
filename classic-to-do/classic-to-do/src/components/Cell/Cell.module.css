@@ -13,3 +13,8 @@
   align-items: center;
   flex-direction: row;
 }
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -8,16 +8,18 @@ export const calendarSlice = createSlice({
   initialState: calendar,
   reducers: {
     taskHandler(state, actions) {
+      const id = actions.payload.id;
       const month = actions.payload.month;
       const day = actions.payload.day;
       const title = actions.payload.title;
       const description = actions.payload.description;
-      console.log(actions.payload);
+      const date = actions.payload.date;
+
       state[month].days[day - 1].taskList.inProgress.push({
-        id: title,
+        id: id,
         title: title,
         description: description,
-        data: "aqqqq",
+        data: date,
       });
     },
   },

@@ -2,7 +2,18 @@ import Cell from "../Cell";
 import Card from "../Card";
 import classes from "./Table.module.css";
 import Emoji from "a11y-react-emoji";
-const Table = ({ tasks, label, emoji }) => {
+const Table = ({ tasks, label, emoji, type }) => {
+  {
+    /* <Cell
+    type={type}
+    key={"id"}
+    id={"id"}
+    title={"title"}
+    description={"description"}
+    data={"data"}
+  /> */
+  }
+
   return (
     <div className={classes.main}>
       <label>
@@ -15,6 +26,7 @@ const Table = ({ tasks, label, emoji }) => {
         ) : (
           tasks.map(({ id, title, description, data }) => (
             <Cell
+              type={type}
               key={id}
               id={id}
               title={title}

@@ -4,7 +4,7 @@ import { calendarActions } from "../../store/calendarSlice";
 import { useNavigate } from "react-router";
 import TextField from "../TextField";
 import FormCard from "../FormCard";
-import Button from "../Button";
+import { Button } from "../Button";
 import classes from "./TaskForm.module.css";
 import { monthEnum } from "../../utils/enums";
 
@@ -22,14 +22,18 @@ const TaskForm = () => {
     dispatch(formActions.descriptionHandler(event.target.value));
   };
   const submitHandler = (event) => {
+    const id = crypto.randomUUID();
+    const date = new Date(Date.now()).toDateString();
     event.preventDefault();
     dispatch(formActions.titleHandler(""));
     dispatch(formActions.descriptionHandler(""));
     dispatch(
       calendarActions.taskHandler({
+        id: id,
         month: monthEnum[choosenDay.month],
         day: choosenDay.day,
         title: title,
+        date: date,
         description: description,
       })
     );

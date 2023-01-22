@@ -6,11 +6,13 @@ const TaskPage = () => {
   return (
     <>
       <Table
+        type="inProgress"
         tasks={inProgress}
         label={"Let's get it done partner!!"}
         emoji="&#128076;"
       />
       <Table
+        type="finished"
         tasks={finished}
         label={"That's fantastic, you nailed it!!"}
         emoji="&#128526;"

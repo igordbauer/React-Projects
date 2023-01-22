@@ -1,14 +1,13 @@
-import classes from './MainNavbar.module.css'
-import Button from './Button';
-import { useNavigate } from 'react-router-dom';
+import classes from "./MainNavbar.module.css";
+import { Button } from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const MainNavbar = () => {
-
   const navigate = useNavigate();
 
-  const navigateToTaskHandler = () => navigate('/myTasks')
-  const navigateToCreateTasksHandler = () => navigate('/createTask')
-  const navigateToMyCalendar = () => navigate('/myCalendar')
+  const navigateToTaskHandler = () => navigate("/myTasks");
+  const navigateToCreateTasksHandler = () => navigate("/createTask");
+  const navigateToMyCalendar = () => navigate("/myCalendar");
 
   return (
     <header className={classes.header}>
@@ -21,6 +20,6 @@ const MainNavbar = () => {
         <Button onClick={navigateToCreateTasksHandler}>Create task</Button>
       </div>
     </header>
-  )
-}
+  );
+};
 export default MainNavbar;

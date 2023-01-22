@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { weekEnum, monthsEnum, weekIndexOfEnum } from "../../utils/enums";
 import { useMediaQuery } from "react-responsive";
 import classes from "./MyCalendar.module.css";
-import Button from "../Button";
+import { Button } from "../Button";
 import WeekDay from "./WeekDay";
 import DaysGrade from "./DaysGrade";
 
