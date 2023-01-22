@@ -7,9 +7,9 @@ import { chosenDayActions } from "../../../store/chosenDaySlice";
 const DaysGrade = ({ vector }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const chosenDayHandler = async (object) => {
+  const chosenDayHandler = (object) => {
     console.log(object);
-    await dispatch(chosenDayActions.setDay(object));
+    dispatch(chosenDayActions.setDay(object));
     navigate("/MyTasks");
   };
 

@@ -6,24 +6,6 @@ import TaskPage from "./pages/TaskPage";
 import MyCalendarPage from "./pages/MyCalendarPage";
 
 function App() {
-  // const weekDay = new Date().getDay()
-  // const day = new Date().getDate()
-  // const month = new Date().getMonth()
-  // const months = Object.keys(monthsEnum)
-  // const calendar = months.map(month => {
-  //   const days = [...Array(monthsEnum[month].days).keys()].map(day => {
-  //     const weekDay = new Date(`${month} ${day + 1}, ${new Date().getFullYear()}`).getDay()
-  //     console.log(day)
-  //     return {
-  //       day: day + 1,
-  //       weekDay: weekEnum[weekDay]
-  //     }
-  //   })
-  //   return {
-  //     name: monthsEnum[month].name,
-  //     days: days
-  //   }
-  // })
   return (
     <>
       <MainNavbar />
