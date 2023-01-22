@@ -16,6 +16,7 @@
 
 .accept {
   cursor: pointer;
+  margin-left: 0.5rem;
   background-color: rgba(204, 227, 230, 0.6);
   color: black;
   box-shadow: 1px 2px rgba(41, 185, 204, 01);
@@ -27,7 +28,7 @@
 }
 .delete {
   cursor: pointer;
-  background-color: rgba(204, 227, 230, 0.6);
+  background-color: rgba(230, 81, 76, 0.6);
   color: black;
   box-shadow: 1px 2px rgba(41, 185, 204, 01);
   padding: 8px 15px;

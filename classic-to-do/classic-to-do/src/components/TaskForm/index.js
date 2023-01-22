@@ -21,6 +21,7 @@ const TaskForm = () => {
   const descriptionHandler = (event) => {
     dispatch(formActions.descriptionHandler(event.target.value));
   };
+
   const submitHandler = (event) => {
     const id = crypto.randomUUID();
     const date = new Date(Date.now()).toDateString();
