@@ -8,14 +8,28 @@ const Cell = ({ id, data, title, description, type }) => {
   const dispatch = useDispatch();
   const choosenDay = useSelector((state) => state.chosenDayReducer);
 
+  const taskDoneHandler = () => {
+    dispatch(
+      calendarActions.taskHandler({
+        id: id,
+        month: monthEnum[choosenDay.month],
+        day: choosenDay.day,
+        title: title,
+        date: data,
+        description: description,
+        type: "finished",
+      })
+    );
+    deleteTaskHandler();
+  };
+
   const deleteTaskHandler = () => {
-    console.log("render");
     dispatch(
       calendarActions.deleteTask({
         id: id,
         month: monthEnum[choosenDay.month],
         day: choosenDay.day,
-        type,
+        type: type,
       })
     );
   };
@@ -31,7 +45,9 @@ const Cell = ({ id, data, title, description, type }) => {
           <div>{description}</div>
           <div>
             <DeleteButton onClick={deleteTaskHandler}>Delete</DeleteButton>
-            {type === "inProgress" && <AcceptButton>Done!</AcceptButton>}
+            {type === "inProgress" && (
+              <AcceptButton onClick={taskDoneHandler}>Done!</AcceptButton>
+            )}
           </div>
         </div>
       </div>

@@ -8,8 +8,9 @@ export const calendarSlice = createSlice({
   initialState: calendar,
   reducers: {
     taskHandler(state, actions) {
-      const { id, month, day, title, description, date } = actions.payload;
-      state[month].days[day - 1].taskList.inProgress.push({
+      const { id, month, day, title, description, date, type } =
+        actions.payload;
+      state[month].days[day - 1].taskList[`${type}`].push({
         id,
         title,
         description,
@@ -17,10 +18,20 @@ export const calendarSlice = createSlice({
       });
     },
     deleteTask(state, actions) {
-      const { id, month, day } = actions.payload;
-      state[month].days[day - 1].taskList.inProgress = state[month].days[
+      const { id, month, day, type } = actions.payload;
+      state[month].days[day - 1].taskList[`${type}`] = state[month].days[
         day - 1
       ].taskList.inProgress.filter((e) => e.id !== id);
+    },
+    finishTask(state, actions) {
+      const { id, month, day, title, description, date } = actions.payload;
+
+      state[month].days[day - 1].taskList.finished.push({
+        id,
+        title,
+        description,
+        date,
+      });
     },
   },
 });

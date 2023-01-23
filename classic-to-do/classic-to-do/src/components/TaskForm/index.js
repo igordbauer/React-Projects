@@ -35,6 +35,7 @@ const TaskForm = () => {
         day: choosenDay.day,
         title: title,
         date: date,
+        type: "inProgress",
         description: description,
       })
     );
