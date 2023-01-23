@@ -58,3 +58,7 @@ export const weekIndexOfEnum = {
   Friday: 5,
   Saturday: 6,
 };
+export const typeTask = {
+  inProgress: "inProgress",
+  finished: "finished",
+};

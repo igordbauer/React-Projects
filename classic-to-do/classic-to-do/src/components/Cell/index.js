@@ -4,6 +4,8 @@ import { calendarActions } from "../../store/calendarSlice";
 import { monthEnum } from "../../utils/enums";
 import { useDispatch, useSelector } from "react-redux";
 import CardCellLayout from "./CardCellLayout";
+import { typeTask } from "../../utils/enums";
+
 const Cell = ({ id, data, title, description, type }) => {
   const dispatch = useDispatch();
   const choosenDay = useSelector((state) => state.chosenDayReducer);
@@ -17,7 +19,7 @@ const Cell = ({ id, data, title, description, type }) => {
         title: title,
         date: data,
         description: description,
-        type: "finished",
+        type: typeTask.finished,
       })
     );
     deleteTaskHandler();
@@ -45,7 +47,7 @@ const Cell = ({ id, data, title, description, type }) => {
           <div>{description}</div>
           <div>
             <DeleteButton onClick={deleteTaskHandler}>Delete</DeleteButton>
-            {type === "inProgress" && (
+            {type === typeTask.inProgress && (
               <AcceptButton onClick={taskDoneHandler}>Done!</AcceptButton>
             )}
           </div>
