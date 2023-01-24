@@ -10,6 +10,7 @@
     "a11y-react-emoji": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
     "react-responsive": "^9.0.2",
     "react-router": "^6.4.3",

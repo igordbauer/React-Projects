@@ -15,7 +15,7 @@ const Table = ({ tasks, label, emoji, type }) => {
     <div className={classes.main}>
       <label>
         <div>{label}</div>
-        <Emoji symbol={emoji}></Emoji>
+        <Emoji symbol={emoji} />
       </label>
       <Card>
         {tasks.length === 0 ? (
