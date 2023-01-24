@@ -26,3 +26,18 @@ let people: {
 let course: string | number = "React";
 
 course = 89334;
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+function show(value: any) {
+  console.log(value);
+}
+const arrayDemo = [1, 2, 3];
+
+function putOnTheBeggining<T>(array: T[], value: T) {
+  return [value, ...array];
+}
+
+const a = putOnTheBeggining(arrayDemo, 1);
+const b = putOnTheBeggining(["a", "b"], "c");
