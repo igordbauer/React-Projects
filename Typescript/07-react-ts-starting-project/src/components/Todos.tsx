@@ -1,10 +1,12 @@
-function Todos() {
+import React from "react";
+const Todos: React.FC<{ items: string[] }> = ({ items }) => {
   return (
     <ul>
-      <li>Learn React</li>
-      <li>Learn Typescript</li>
+      {items.map((e) => (
+        <li key={e}>{e}</li>
+      ))}
     </ul>
   );
-}
+};
 
 export default Todos;
